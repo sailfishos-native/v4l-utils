@@ -1,0 +1,4 @@
+[submodule "v4l-utils"]
+        path = v4l-utils
+        url = https://git.linuxtv.org//v4l-utils.git
+        branch = master
