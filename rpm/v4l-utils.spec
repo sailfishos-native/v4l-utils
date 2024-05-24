@@ -1,5 +1,5 @@
 Name:           v4l-utils
-Version:        1.16.7
+Version:        1.26.1
 Release:        1%{?dist}
 Summary:        Utilities for video4linux and DVB devices
 # libdvbv5, dvbv5 utils, ir-keytable and v4l2-sysfs-path are GPLv2 only
@@ -13,7 +13,7 @@ BuildRequires:  gettext
 BuildRequires:  kernel-headers
 BuildRequires:  libjpeg-devel
 BuildRequires:  qt5-qtcore-devel
-BuildRequires:  systemd-devel
+BuildRequires:  pkgconfig(systemd)
 BuildRequires:  autoconf
 BuildRequires:  automake
 BuildRequires:  libtool
