@@ -182,7 +182,6 @@ rm -f $RPM_BUILD_ROOT%{_libdir}/{v4l1compat.so,v4l2convert.so}
 
 %files -n libdvbv5-gconv
 %{_libdir}/gconv/*.so
-%{_libdir}/gconv/gconv-modules.d/libdvbv5.conf
 
 %changelog
 * Sun Sep 8 2019 Dylan Van Assche <dylan.van.assche@protonmail.com> 1.6.1-1 
