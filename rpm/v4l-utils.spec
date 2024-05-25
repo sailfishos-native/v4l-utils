@@ -106,13 +106,13 @@ cd v4l-utils
 %meson -Dbpf=disabled -Ddoxygen-man=true -Ddoxygen-html=false -Dqv4l2=enabled \
         -Dqvidcap=disabled -Dv4l2-tracer=disabled
 
-make %{?_smp_mflags}
+%meson_build
 
 
 %install
 cd v4l-utils
 %{!?_udevrulesdir: %global _udevrulesdir /lib/udev/rules.d}
-%make_install
+%meson_install
 find $RPM_BUILD_ROOT -name '*.la' -exec rm -f {} ';'
 rm -f $RPM_BUILD_ROOT%{_libdir}/{v4l1compat.so,v4l2convert.so}
 %find_lang %{name}
