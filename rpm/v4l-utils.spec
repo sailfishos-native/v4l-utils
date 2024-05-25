@@ -17,9 +17,9 @@ BuildRequires:  pkgconfig(systemd)
 BuildRequires:  autoconf
 BuildRequires:  automake
 BuildRequires:  libtool
+BuildRequires:  meson >= 0.56
 
 # BPF decoder dependencies
-
 %define with_bpf 0
 
 %if %{with_bpf}
@@ -103,8 +103,8 @@ files for developing applications that use libdvbv5.
 
 %build
 cd v4l-utils
-autoreconf -i
-%configure --disable-static --enable-libdvbv5
+%meson -Dbpf=auto -Ddoxygen-man=true -Ddoxygen-html=false -Dqv4l2=enabled
+
 # Don't use rpath!
 sed -i 's|^hardcode_libdir_flag_spec=.*|hardcode_libdir_flag_spec=""|g' libtool
 sed -i 's|^runpath_var=LD_RUN_PATH|runpath_var=DIE_RPATH_DIE|g' libtool
