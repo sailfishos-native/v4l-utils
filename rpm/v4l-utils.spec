@@ -17,6 +17,7 @@ BuildRequires:  qt5-qtcore-devel
 BuildRequires:  pkgconfig(systemd)
 BuildRequires:  libtool
 BuildRequires:  meson >= 0.56
+BuildRequires:  qt5-qtwidgets-devel
 
 # BPF decoder dependencies
 %define with_bpf 0
