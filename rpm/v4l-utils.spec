@@ -102,7 +102,8 @@ files for developing applications that use libdvbv5.
 
 %build
 cd v4l-utils
-%meson -Dbpf=disabled -Ddoxygen-man=true -Ddoxygen-html=false -Dqv4l2=enabled -Dqvidcap=disabled
+%meson -Dbpf=disabled -Ddoxygen-man=true -Ddoxygen-html=false -Dqv4l2=enabled \
+        -Dqvidcap=disabled -Dv4l2-tracer=disabled
 
 # Don't use rpath!
 sed -i 's|^hardcode_libdir_flag_spec=.*|hardcode_libdir_flag_spec=""|g' libtool
