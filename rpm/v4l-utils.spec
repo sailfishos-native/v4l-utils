@@ -96,6 +96,14 @@ Requires:       libdvbv5%{?_isa} = %{version}-%{release}
 The libdvbv5-devel package contains libraries and header
 files for developing applications that use libdvbv5.
 
+%package -n libdvbv5-gconv
+Summary:        Gconv files with the charsets For Digital TV.
+License:        LGPL-2.1-or-later
+
+%description -n libdvbv5-gconv
+Some digital TV standards define their own charsets. Add library
+support for them: EN 300 468 and ARIB STD-B24
+
 
 %prep
 %autosetup -p1
@@ -147,6 +155,8 @@ rm -f $RPM_BUILD_ROOT%{_libdir}/{v4l1compat.so,v4l2convert.so}
 %{_bindir}/v4l2-compliance
 %{_sbindir}/v4l2-dbg
 %{_mandir}/man1/v4l2-compliance.1*
+%{_bindir}/qv4l2
+%{_datadir}/icons/hicolor/*/apps/qv4l2.*
 
 %files -n libv4l
 %doc v4l-utils/ChangeLog v4l-utils/README.libv4l v4l-utils/TODO
@@ -170,6 +180,9 @@ rm -f $RPM_BUILD_ROOT%{_libdir}/{v4l1compat.so,v4l2convert.so}
 %{_libdir}/libdvbv5*.so
 %{_libdir}/pkgconfig/libdvbv5*.pc
 
+%files -n libdvbv5-gconv
+%{_libdir}/gconv/*.so
+%{_libdir}/gconv/gconv-modules.d/libdvbv5.conf
 
 %changelog
 * Sun Sep 8 2019 Dylan Van Assche <dylan.van.assche@protonmail.com> 1.6.1-1 
