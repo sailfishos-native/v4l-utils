@@ -10,12 +10,11 @@ Source0:        http://linuxtv.org/downloads/v4l-utils/v4l-utils-%{version}.tar.
 
 BuildRequires:  alsa-lib-devel
 BuildRequires:  gettext
+BuildRequires:  doxygen
 BuildRequires:  kernel-headers
 BuildRequires:  libjpeg-devel
 BuildRequires:  qt5-qtcore-devel
 BuildRequires:  pkgconfig(systemd)
-BuildRequires:  autoconf
-BuildRequires:  automake
 BuildRequires:  libtool
 BuildRequires:  meson >= 0.56
 
