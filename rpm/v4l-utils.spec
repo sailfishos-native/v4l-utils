@@ -123,7 +123,7 @@ rm -f $RPM_BUILD_ROOT%{_libdir}/{v4l1compat.so,v4l2convert.so}
 %postun -n libdvbv5 -p /sbin/ldconfig
 
 %files -f v4l-utils/%{name}.lang
-%doc v4l-utils/README
+%doc v4l-utils/README.md
 %dir %{_sysconfdir}/rc_keymaps
 %config(noreplace) %{_sysconfdir}/rc_maps.cfg
 %{_udevrulesdir}/70-infrared.rules
@@ -143,7 +143,7 @@ rm -f $RPM_BUILD_ROOT%{_libdir}/{v4l1compat.so,v4l2convert.so}
 %exclude %{_mandir}/man1/v4l2-compliance.1*
 
 %files devel-tools
-%doc v4l-utils/README
+%doc v4l-utils/README.md
 %{_bindir}/decode_tm6000
 %{_bindir}/v4l2-compliance
 %{_sbindir}/v4l2-dbg
