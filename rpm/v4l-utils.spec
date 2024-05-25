@@ -10,7 +10,6 @@ Source0:        http://linuxtv.org/downloads/v4l-utils/v4l-utils-%{version}.tar.
 
 BuildRequires:  alsa-lib-devel
 BuildRequires:  gettext
-BuildRequires:  doxygen
 BuildRequires:  kernel-headers
 BuildRequires:  libjpeg-devel
 BuildRequires:  qt5-qtcore-devel
@@ -103,7 +102,7 @@ files for developing applications that use libdvbv5.
 
 %build
 cd v4l-utils
-%meson -Dbpf=disabled -Ddoxygen-man=true -Ddoxygen-html=false -Dqv4l2=enabled \
+%meson -Dbpf=disabled -Ddoxygen-doc=false -Ddoxygen-man=false -Ddoxygen-html=false -Dqv4l2=enabled \
         -Dqvidcap=disabled -Dv4l2-tracer=disabled
 
 %meson_build
