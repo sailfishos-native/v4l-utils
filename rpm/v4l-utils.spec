@@ -110,7 +110,7 @@ support for them: EN 300 468 and ARIB STD-B24
 
 %build
 cd v4l-utils
-%meson -Dbpf=disabled -Ddoxygen-doc=false -Ddoxygen-man=false -Ddoxygen-html=false -Dqv4l2=enabled \
+%meson -Dbpf=disabled -Ddoxygen-doc=disabled -Ddoxygen-man=false -Ddoxygen-html=false -Dqv4l2=enabled \
         -Dqvidcap=disabled -Dv4l2-tracer=disabled
 
 %meson_build
