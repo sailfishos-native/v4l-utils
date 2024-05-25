@@ -122,7 +122,11 @@ cd v4l-utils
 %meson_install
 find $RPM_BUILD_ROOT -name '*.la' -exec rm -f {} ';'
 rm -f $RPM_BUILD_ROOT%{_libdir}/{v4l1compat.so,v4l2convert.so}
+mkdir $RPM_BUILD_ROOT%{_libdir}/gconv/gconv-modules.d
+mv $RPM_BUILD_ROOT%{_libdir}/gconv/gconv-modules $RPM_BUILD_ROOT%{_libdir}/gconv/gconv-modules.d/libdvbv5.conf
+
 %find_lang %{name}
+%find_lang libdvbv5
 
 %post -n libv4l -p /sbin/ldconfig
 %post -n libdvbv5 -p /sbin/ldconfig
@@ -157,6 +161,7 @@ rm -f $RPM_BUILD_ROOT%{_libdir}/{v4l1compat.so,v4l2convert.so}
 %{_mandir}/man1/v4l2-compliance.1*
 %{_bindir}/qv4l2
 %{_datadir}/icons/hicolor/*/apps/qv4l2.*
+%{_datadir}/applications/qv4l2.desktop
 
 %files -n libv4l
 %doc v4l-utils/ChangeLog v4l-utils/README.libv4l v4l-utils/TODO
@@ -170,7 +175,7 @@ rm -f $RPM_BUILD_ROOT%{_libdir}/{v4l1compat.so,v4l2convert.so}
 %{_libdir}/libv4l*.so
 %{_libdir}/pkgconfig/libv4l*.pc
 
-%files -n libdvbv5
+%files -n libdvbv5 -f v4l-utils/libdvbv5.lang
 %doc v4l-utils/ChangeLog v4l-utils/lib/libdvbv5/README
 %license v4l-utils/COPYING
 %{_libdir}/libdvbv5*.so.*
@@ -182,6 +187,7 @@ rm -f $RPM_BUILD_ROOT%{_libdir}/{v4l1compat.so,v4l2convert.so}
 
 %files -n libdvbv5-gconv
 %{_libdir}/gconv/*.so
+%{_libdir}/gconv/gconv-modules.d/libdvbv5.conf
 
 %changelog
 * Sun Sep 8 2019 Dylan Van Assche <dylan.van.assche@protonmail.com> 1.6.1-1 
